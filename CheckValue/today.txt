@@ -5,4 +5,5 @@ Create form:
 	- Birth day: date
 	- Password: letters or number, length >6
 	- Password confirm
++ Use plugin create signin
 
