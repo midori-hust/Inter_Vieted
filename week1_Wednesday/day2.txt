@@ -1,0 +1,6 @@
+Report Wednesday week1:
+- HTML : 
+	- Creating form use bootstrap 
+	- Checking vadiate  use HTML5
+- Jquery
+	- Checking vadiate use plugin
