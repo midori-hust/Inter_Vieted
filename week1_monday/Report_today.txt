@@ -1,0 +1,17 @@
+-Tim hieu : Jquery
+
+- Bai tap 1: Su dung css hien thi anh 
+	File code: Picture.html
+- Bai tap 2: Trinh chieu slide anh
+	File code: Slide.html
+- Bai tap 3: Thu su dung tool tip
+	File code: tooltip.html
+
+
+=> phan file anh gui cho em em chi doc hieu duoc file html
+phan css cua no kha dai và rac roi nen em khong hieu duoc a
+
+=> Ngay mai em khong len cong ty duoc a: anh co the gui cho em
+tai lieu va bai tap qua skpye or gmail khong a?
+
+=> thank a nhieu a:)
