@@ -1,0 +1,7 @@
+Create form:
++ Signin : 
+	- name: letters or space
+	- emails
+	- Birth day: date
+	- Password: letters or number, length >6
+	- Password confirm

@@ -1,0 +1,50 @@
+body {
+	background-image: url("../img/bg.jpg");
+	padding-top: 40px;
+}
+.content{	
+	background-color: white;
+	margin: 0px auto;
+	padding-top: 30px;
+	width: 980px;
+	min-width: 980px;
+	min-height: 400px;
+	padding-left: 20px;
+} 
+.container{
+	margin: 0px auto;
+	width: 550px;
+	min-width: 550px;
+	min-height: 400px;
+	padding-bottom: 50px;
+	padding-top: 30px;
+}
+
+.container1{
+	margin: 0px auto;
+	min-width: 550px;
+	
+	padding-bottom: 50px;
+	padding-top: 30px;
+}
+.container2{
+	background-color: rgba(191, 186, 186, 0.56);
+	margin: 0px auto;
+	width: 700px;
+	min-width: 550px;
+	min-height: 200px;
+	padding-bottom: 50px;
+	padding-top: 20px;
+	text-align: center;
+	font-size: 39px;
+}
+.container3{
+	margin: 0px auto;
+	width: 720px;
+	border: 2px ridge;
+}
+
+
+
+
+
