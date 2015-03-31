@@ -1,0 +1,11 @@
+  $(document).ready(function(){
+        $("#btn1").click(function(){
+            window.location.replace("file:///D:/Inter_Vieted/CheckValue/useplugin.html");
+        });
+        $("#btn2").click(function(){
+            window.location.replace("file:///D:/Inter_Vieted/CheckValue/useplugin.html");
+        });
+        $("#btn3").click(function(){
+            window.location.replace("file:///D:/Inter_Vieted/CheckValue/useplugin.html");
+        });
+  });

@@ -1,0 +1,61 @@
+body {
+	background-image: url("../img/bg.jpg");
+}
+
+#container{	
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	width: 980px;
+	min-width: 980px;
+	min-height: 700px;
+}
+
+#header{
+	height: 40px;
+	text-align: center;
+	background-color: #C7C7E6;
+}
+
+#content{
+	padding-top: 10px;
+	width: 980px;
+	min-width: 980px;
+}
+
+#footer{
+	clear: both;
+	height: 30px;
+	text-align: center;
+	background-color:  #D2D2D2;
+}
+#main{
+	margin: 0px auto;
+	width: 83%;
+	float: left;
+} 
+#nav{
+	float: left;
+	width: 15%;
+	padding: 0px 15px 0px 15px;
+}
+
+/*******Nav********/
+#nav a {
+	list-style: none;
+	font-size: 20px;
+	color: white;
+}
+
+form #main{
+	border: 1px solid;	
+} 
+
+label.error{
+            padding-left:10px; 
+            color: red;
+            font-weight: 5px;
+            font-size: 17px;
+}
+
+

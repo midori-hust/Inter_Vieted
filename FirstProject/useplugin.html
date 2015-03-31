@@ -9,13 +9,23 @@
     <script language="javascript" src="js/jquery-1.11.2.js" type="text/javascript"></script>
     <script language="javascript" src="js/jquery.validate.js" type="text/javascript"></script>  
     <script language="javascript" src="js/bootstrap.min.js" type="text/javascript"></script>  
-    <script language="javascript" src="js/main1.js" type="text/javascript"></script> 
+    <script language="javascript" src="js/signup.js" type="text/javascript"></script> 
     
 </head>
 <body>
-    <div class="content">
-        <div class ="container3">
+   <div id="container">
+    <div id ="header">
+        <h2> MyProject</h2>
+    </div>
+    <div id="content">
+        <div id ="nav">
+                <button type="button" class="btn btn-block btn-Info" id="btn1">Signin </button> 
+                <button type="button" class="btn btn-block btn-Info" id="btn2">Signup </button>
+                <button type="button" class="btn btn-block btn-Info" id="btn3">Timer </button>
+        </div>
+        <div id ="main">
             <form  id='input_form' method='post'>
+
                 <h2> Form Register</h2> 
 
                 <div class ="form-group">
@@ -25,7 +35,7 @@
                 
                 <div class = "form-group">
                     <label for="email"> Email </label>
-                    <input type="text" id="email" name="email" class="form-control" placeholder="example@gamil.com"><br>
+                    <input type="text" id="email" name="email" class="form-control" placeholder="example@gmail.com"><br>
                     <div id="email_input"></div>   
                 </div>
                  
@@ -44,10 +54,13 @@
                     <input type="password" id="cpassword" name="cpassword" class="form-control">
                 </div>
 
-                <button type="submit" > Signin </button>
+                <button type="submit" class="btn form-control btn-primary"> Signin </button>
             </form> 
         </div>
-        
-    </div>    
+    </div>
+    <div id="footer">
+            @Copyright!
+    </div> 
+   </div>   
 </body>
 </html>
