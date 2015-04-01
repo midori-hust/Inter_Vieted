@@ -8,7 +8,6 @@ body {
 	margin-right: auto;
 	width: 980px;
 	min-width: 980px;
-	min-height: 700px;
 }
 
 #header{
@@ -16,11 +15,15 @@ body {
 	text-align: center;
 	background-color: #C7C7E6;
 }
+#header h2{
+	margin-top:5px;
+}
 
 #content{
 	padding-top: 10px;
 	width: 980px;
 	min-width: 980px;
+	min-height: 500px;
 }
 
 #footer{
