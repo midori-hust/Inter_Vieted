@@ -1,11 +1,11 @@
   $(document).ready(function(){
         $("#btn1").click(function(){
-            window.location.replace("file:///D:/Inter_Vieted/FirstProject/useplugin.html");
+            window.location.replace("file:///home/pthao/thaopt/Inter_Vieted/FirstProject/index.html");
         });
         $("#btn2").click(function(){
-            window.location.replace("file:///D:/Inter_Vieted/FirstProject/useplugin.html");
+            window.location.replace("file:///home/pthao/thaopt/Inter_Vieted/FirstProject/useplugin.html");
         });
         $("#btn3").click(function(){
-            window.location.replace("file:///D:/Inter_Vieted/FirstProject/datetime.html");
+            window.location.replace("file:///home/pthao/thaopt/Inter_Vieted/FirstProject/datetime.html");
         });
   });
