@@ -24,7 +24,7 @@
                 <button type="button" class="btn btn-block btn-Info" id="btn3">Datetime </button>
         </div>
         <div id ="main">
-            <form  id='input_form' method='post'>
+            <form id='input_form' method='POST' action="">
 
                 <h2> Form Register</h2> 
 
@@ -54,13 +54,20 @@
                     <input type="password" id="cpassword" name="cpassword" class="form-control">
                 </div>
 
-                <button type="submit" class="btn form-control btn-primary"> Signin </button>
+                <button type="submit" class="btn form-control btn-primary" name ="signin"> Signin </button>
             </form> 
         </div>
     </div>
     <div id="footer">
             @Copyright!
     </div> 
-   </div>   
+   </div>  
+   <?php
+        if (isset($POST)) {
+            print_r($POST);
+        }
+
+   ?>
+
 </body>
 </html>

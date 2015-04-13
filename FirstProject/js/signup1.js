@@ -1,14 +1,16 @@
   $(document).ready(function(){
-
-        $("button").click(function(event){
+        $("#check").click(function(event){
             var name = $("#name").val();
-            var nameInfo ="";
+            var nameInfo = "";
             var email = $("#email").val();
+            var emailInfo = "";
             var birthday =$("#birthday").val();
+            var birthdayInfo ="";
             var password = $("#password").val();
             var passwordInfo = "";
             var pwconfirm = $("#pwconfirm").val();
             var error = false;
+
             if ( name == "") {
                 $("#name_input").html("<li>"+" Miss name "+"</li>");
                 error = true;
@@ -25,24 +27,29 @@
                 $("#name_input").html(nameInfo);
             }
 
-
             if (email == "") {
-                $("#email_input").html("<li>"+"Miss email "+"</li>");
+                emailInfo = "<li>"+" Miss email "+"</li>";
                 error = true;
             }
             else{
                 if (!checkEmail(email)) {
-                    $("#email_input").html("<li>"+" Email is wrong "+"</li>");
+                    emailInfo = emailInfo +"<li>"+" Email is wrong "+"</li>";
                     error = true;
-                };
+                }
             };
+            $("#email_input").html(emailInfo);
+
 
             if (!checkDate(birthday)) {
-                $("#birthday_input").html("<li>"+" Birthday is wrong !"+"</li>")
+                birthdayInfo = "<li>"+" Birthday is wrong !"+"</li>";
+                error =true;
             };
+            $("#birthday_input").html(birthdayInfo)
+
 
             if (password == "") {
                passwordInfo = "<li>"+ "Miss password"+ "</li>";
+               error =true;
             }
             else{
                 if (!checkPassword(password)) {
@@ -57,16 +64,14 @@
             }
             $("#password_input").html(passwordInfo);
 
+
             if (pwconfirm != password ) {
                 $("#pwconfirm_input").html("<li>"+ "Password confirm is wrong"+"</li>");
                 error = true;
             };
 
-            if (error) {
-                $("p").text("Sorry ! Your form is wrong! " )
-            };
-
-         event.preventDefault();
+            if(error)
+                event.preventDefault();
         });
     });
      
