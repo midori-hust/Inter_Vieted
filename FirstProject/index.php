@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html>
 <head>
     <title> FirstProject </title>
@@ -12,15 +15,21 @@
     <script language="javascript" src="js/main.js" type="text/javascript"></script> 
 </head>
 <body>
+    
    <div id="container">
         <div id ="header">
             <h2> MyProject</h2>
         </div>
         <div id="content">
             <div id ="nav">
-                <button type="button" class="btn btn-block btn-Info" id="btn1">Signin </button> 
-                <button type="button" class="btn btn-block btn-Info" id="btn2">Add users </button>
-                <button type="button" class="btn btn-block btn-Info" id="btn3">DateTime </button>
+                <?php if ($_SESSION['id'] == null) { ?>
+                    <button type="button" class="btn btn-block btn-Info" id="btn1">Signin </button> 
+                    <button type="button" class="btn btn-block btn-Info" id="btn2">Signup </button>
+                <?php }else{?>
+                    <button type="button" class="btn btn-block btn-Info" id="btn3">Signout</button>
+                    <button type="button" class="btn btn-block btn-Info" id="btn4">Edit Profile</button>
+                <?php }; ?>
+                    <button type="button" class="btn btn-block btn-Info" id="btn5">Datetime </button>
             </div>
             <div id ="main">
                 <h3> Truyện cổ tích: Trí khôn của ta đây </h3>

@@ -1,4 +1,7 @@
-<?php include "users.php" ?>
+<?php 
+    include "users.php";
+    session_start();
+ ?>
 <html>
 <head>
     <title> Signup </title>
@@ -20,10 +23,16 @@
     </div>
     <div id="content">
         <div id ="nav">
+            <?php if ($_SESSION['id'] == null) { ?>
                 <button type="button" class="btn btn-block btn-Info" id="btn1">Signin </button> 
                 <button type="button" class="btn btn-block btn-Info" id="btn2">Signup </button>
-                <button type="button" class="btn btn-block btn-Info" id="btn3">Datetime </button>
+            <?php }else{?>
+                <button type="button" class="btn btn-block btn-Info" id="btn3">Signout</button>
+                <button type="button" class="btn btn-block btn-Info" id="btn4">Edit Profile</button>
+            <?php }; ?>
+                <button type="button" class="btn btn-block btn-Info" id="btn5">Datetime </button>
         </div>
+        
         <div id ="main">
             <form id='input_form' method='POST' action="signin.php" name="check">
 
@@ -31,11 +40,11 @@
 
                 <div class ="form-group">
                     <label for="username"> Name </label>       
-                    <input type ="text" id="name" name="username" class="form-control required" placeholder="Enter username" data-minlength='4'>
+                    <input type ="text" id="name" name="username" class="form-control required" placeholder="Enter username" minlength='4'>
                 </div>
                 <div class ="form-group">
                     <label for="password"> Password </label>
-                    <input type="password" id="password" name="password" class="form-control required" data-minlength='6'>
+                    <input type="password" id="password" name="password" class="form-control required" minlength='6'>
                 </div>
 
                 <input type ="submit" class="btn form-control btn-primary" name="submit" value="Signin">
@@ -56,8 +65,16 @@
     <?php
         if (isset($_POST["submit"])) {
             print_r($_POST);
-            insertUsers($_POST['name'], $_POST['email'], $_POST['birthday'], $_POST['password']);
-            Redirect("http://localhost/Inter_Vieted/FirstProject/index.html", false);
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+
+            if (checkName($username) && checkPassword($password)) {
+                if (signin($username, $password)) {
+                    $_SESSION['id'] = takeIdObject($username);
+                    Redirect("http://localhost/Inter_Vieted/FirstProject/index.php", false);
+                }                
+            }
+
         }
     ?>
 

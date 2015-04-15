@@ -4,7 +4,7 @@
 ?>
 <html>
 <head>
-    <title> Signup </title>
+    <title> Edit Profile </title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/view.css">
     <link rel="stylesheet" type="text/css" href="Bootstrap/css/bootstrap.min.css">
@@ -34,36 +34,37 @@
         </div>
         <div id ="main">
             <form id='input_form' method='POST' action="signuppluginjquery.php" name="check">
-
-                <h2> Form Register </h2> 
-
+                <h2> Edit profile </h2> 
+                <?php
+                    $info = takeInfoUser($_SESSION['id']);
+                ?>
                 <div class ="form-group">
                     <label for="username"> Name </label>       
-                    <input type ="text" id="name" name="username" class="form-control required" placeholder="Enter username" data-minlength='4'>
+                    <input type ="text" id="name" name="username" class="form-control required" placeholder="Enter username" minlength='4' value ="<?php echo $info['username'];?>">
                 </div>
                 
                 <div class = "form-group">
                     <label for="email"> Email </label>
-                    <input type="email" id="email" name="email" class="form-control required" placeholder="example@gmail.com" ><br>
+                    <input type="email" id="email" name="email" class="form-control required" placeholder="example@gmail.com" value ="<?php echo $info['email'];?>"><br>
                     <div id="email_input"></div>   
                 </div>
                  
                 <div class="form-group">
                     <label for="birthday"> Birthday </label>
-                    <input type="date" id="birthday" name= "birthday" class="form-control required" placeholder="dd/mm/yyyy"><br>
+                    <input type="date" id="birthday" name= "birthday" class="form-control required" placeholder="dd/mm/yyyy" value ="<?php echo $info['birthday'];?>"><br>
                 </div>
 
                 <div class ="form-group">
                     <label for="password"> Password </label>
-                    <input type="password" id="password" name="password" class="form-control required" data-minlength='6'>
+                    <input type="password" id="password" name="password" class="form-control required" minlength='6' value ="<?php echo $info['password'];?>">
                 </div>
                 
                 <div class="form-group">
                     <label for="cpassword"> Password confirm </label>
-                    <input type="password" id="cpassword" name="cpassword" class="form-control required" equalTo="#password">
+                    <input type="password" id="cpassword" name="cpassword" class="form-control required" equalTo="#password" value ="<?php echo $info['password'];?>">
                 </div>
 
-                <input type ="submit" class="btn form-control btn-primary" name="submit" value="Signup">
+                <input type ="submit" class="btn form-control btn-primary" name="submit" value="Edit Profile">
 
             </form> 
         </div>
@@ -85,8 +86,7 @@
             $birthday = $_POST['birthday'];
             $password = $_POST['password'];
             if ((checkName($name)) && (checkEmail($email)) && (checkBirthday($birthday)) && (checkPassword($password))) {
-                insertUser($name, $email, $birthday, $password);
-                $_SESSION["id"] = takeIdObject($name);
+                updateInfoUser($name, $email, $birthday, $password);
                 Redirect("http://localhost/Inter_Vieted/FirstProject/index.php", false);
             }
         }
