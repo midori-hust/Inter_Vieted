@@ -1,4 +1,4 @@
-<?php include "users.php"; ?>
+<?php include "users.php" ?>
 <html>
 <head>
     <title> Signup </title>
@@ -25,37 +25,20 @@
                 <button type="button" class="btn btn-block btn-Info" id="btn3">Datetime </button>
         </div>
         <div id ="main">
-            <form id='input_form' method='POST' action="signuppluginjquery.php" name="check">
+            <form id='input_form' method='POST' action="signin.php" name="check">
 
-                <h2> Form Register </h2> 
+                <h2> SignIn </h2> 
 
                 <div class ="form-group">
                     <label for="username"> Name </label>       
                     <input type ="text" id="name" name="username" class="form-control required" placeholder="Enter username" data-minlength='4'>
                 </div>
-                
-                <div class = "form-group">
-                    <label for="email"> Email </label>
-                    <input type="email" id="email" name="email" class="form-control required" placeholder="example@gmail.com" ><br>
-                    <div id="email_input"></div>   
-                </div>
-                 
-                <div class="form-group">
-                    <label for="birthday"> Birthday </label>
-                    <input type="date" id="birthday" name= "birthday" class="form-control required" placeholder="dd/mm/yyyy"><br>
-                </div>
-
                 <div class ="form-group">
                     <label for="password"> Password </label>
                     <input type="password" id="password" name="password" class="form-control required" data-minlength='6'>
                 </div>
-                
-                <div class="form-group">
-                    <label for="cpassword"> Password confirm </label>
-                    <input type="password" id="cpassword" name="cpassword" class="form-control required" equalTo="#password">
-                </div>
 
-                <input type ="submit" class="btn form-control btn-primary" name="submit" value="Signup">
+                <input type ="submit" class="btn form-control btn-primary" name="submit" value="Signin">
 
             </form> 
         </div>
@@ -72,15 +55,9 @@
    
     <?php
         if (isset($_POST["submit"])) {
-            
-            $name = $_POST['username'];
-            $email = $_POST['email'];
-            $birthday = $_POST['birthday'];
-            $password = $_POST['password'];
-            if ((checkName($name)) && (checkEmail($email)) && (checkBirthday($birthday)) && (checkPassword($password))) {
-                insertUsers($name, $email, $birthday, $password);
-                Redirect("http://localhost/Inter_Vieted/FirstProject/index.html", false);
-            }
+            print_r($_POST);
+            insertUsers($_POST['name'], $_POST['email'], $_POST['birthday'], $_POST['password']);
+            Redirect("http://localhost/Inter_Vieted/FirstProject/index.html", false);
         }
     ?>
 
